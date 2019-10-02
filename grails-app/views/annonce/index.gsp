@@ -38,16 +38,16 @@
                         <td>
                             <ul>
                                 <g:each in="${annonce.illustrations}" var="illustration">
-                                    <li><g:link controller="annonce" action="show" id="${illustration.id}">${illustration.filename}</g:link></li>
+                                    <li><asset:image width="200" height="115" src="illustrations/${illustration.filename}"/></li>
                                 </g:each>
                             </ul>
                         </td>
                         <td>
                             <g:if test="${annonce.state == true}">
-                                Valide
+                                Active
                             </g:if>
                             <g:else>
-                                Expirée
+                                Expired
                             </g:else>
                         </td>
                         <td><g:link controller="user" action="show" id="${annonce.author.id}">${annonce.author}</g:link></td>
