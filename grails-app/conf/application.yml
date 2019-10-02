@@ -143,5 +143,6 @@ server:
         context-path: /projet
 
 maconfig:
-    assets_path: 'C:/Users/deptinfo/IdeaProjects/RoukayaAlexandreGrailsApplication/grails-app/assets/images/'
+    assets_path_mac: '/Users/roukayaibensalah/IdeaProjects/RoukayaAlexandreGrailsApplication/grails-app/assets/images/'
+    assets_path_windows: 'C:/Users/deptinfo/IdeaProjects/RoukayaAlexandreGrailsApplication/grails-app/assets/images/'
     assets_url: 'http://localhost:8091/assets/'

@@ -32,7 +32,7 @@
             <span id="thumbnail-label" class="property-label">Thumbnail</span>
 
             <div class="property-value" aria-labelledby="thumbnail-label">
-                <asset:image width="50" height="50" src="thumbnails/${user.thumbnail.filename}"/>
+                <g:img width="50" height="50" file="${user.thumbnail.filename}"/>
             </div>
         </li>
 

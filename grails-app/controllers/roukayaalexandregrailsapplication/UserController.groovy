@@ -50,10 +50,16 @@ class UserController {
         }
 
         // Sauvegarder le fichier sur le disque en utilisant le path renseigné dans le fichier de configuration
-        file.transferTo(new File(grailsApplication.config.maconfig.assets_path+nomFichier+'.png'))
+        def assets_path
+        if (System.properties['os.name'].toLowerCase().contains('windows')) {
+            assets_path = grailsApplication.config.maconfig.assets_path_windows
+        } else {
+            assets_path = grailsApplication.config.maconfig.assets_path_mac
+        }
+        file.transferTo(new File(assets_path+nomFichier+'.png'))
 
         // Garder une trace sur le nom du fichier
-        user.thumbnail = new Illustration(filename: 'image.png')
+        user.thumbnail = new Illustration(filename: nomFichier+'.png')
 
         try {
             userService.save(user)
