@@ -2,6 +2,7 @@ package roukayaalexandregrailsapplication
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import java.io.File
 
 class UserController {
 
@@ -23,10 +24,36 @@ class UserController {
     }
 
     def save(User user) {
+
         if (user == null) {
             notFound()
             return
         }
+
+        // récupérer le fichier du formulaire
+        def file = request.getFile("file")
+
+        // générer un nom de fichier aléatoire et vérifier qu'il n'existe pas déjà
+        final String lexicon = "abcdefghijklmnopqrstuvwxyz12345674890";
+        final Random rand = new Random();
+        final Set<String> identifiers = new HashSet<String>();
+
+        StringBuilder nomFichier = new StringBuilder();
+        while(nomFichier.toString().length() == 0) {
+            int length = rand.nextInt(5)+5;
+            for(int i = 0; i < length; i++) {
+                nomFichier.append(lexicon.charAt(rand.nextInt(lexicon.length())));
+            }
+            if(identifiers.contains(nomFichier.toString())) {
+                nomFichier = new StringBuilder();
+            }
+        }
+
+        // Sauvegarder le fichier sur le disque en utilisant le path renseigné dans le fichier de configuration
+        file.transferTo(new File(grailsApplication.config.maconfig.assets_path+nomFichier+'.png'))
+
+        // Garder une trace sur le nom du fichier
+        user.thumbnail = new Illustration(filename: 'image.png')
 
         try {
             userService.save(user)

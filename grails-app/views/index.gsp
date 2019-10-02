@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>tp1 mbds</title>
+    <title>TP Grails MBDS</title>
 </head>
 <body>
 <content tag="nav">

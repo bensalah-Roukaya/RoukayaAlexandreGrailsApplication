@@ -35,7 +35,7 @@
         </thead>
         <g:each in="${userList}" var="user">
             <tr>
-                <td><asset:image width="50" height="50" src="thumbnails/${user.thumbnail.filename}"/></td>
+                <td><g:img width="50" height="50" file="${user.thumbnail.filename}"/></td>
                 <td><g:link controller="user" action="show" id="${user.id}">${user.username}</g:link></td>
 
                 <td>${user.password}</td>

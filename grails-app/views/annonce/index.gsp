@@ -39,7 +39,7 @@
                         <td>
                             <ul>
                                 <g:each in="${annonce.illustrations}" var="illustration">
-                                    <li><asset:image width="200" height="115" src="illustrations/${illustration.filename}"/></li>
+                                    <li><g:img width="200" height="125" file="${illustration.filename}"/></li>
                                 </g:each>
                             </ul>
                         </td>

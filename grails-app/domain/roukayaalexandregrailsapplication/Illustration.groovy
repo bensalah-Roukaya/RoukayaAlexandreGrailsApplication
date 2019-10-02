@@ -4,9 +4,7 @@ class Illustration {
     String filename
 
     static constraints = {
-
-        filename blank: false,
-                 nullable: false
+        filename blank: false, nullable: false
     }
 
     @Override
