@@ -15,9 +15,9 @@ class BootStrap {
                             description: "description",
                             validTill: new Date(),
                             state: Boolean.TRUE)
-                            .addToIllustration(new Illustration(filename: 'filename'))
-                            .addToIllustration(new Illustration(filename: 'filename_2'))
-                            .addToIllustration(new Illustration(filename: 'filename_3')))
+                            .addToIllustrations(new Illustration(filename: 'filename'))
+                            .addToIllustrations(new Illustration(filename: 'filename_2'))
+                            .addToIllustrations(new Illustration(filename: 'filename_3')))
         }
 
         userInstance.save(flush: true, failOnError: true)

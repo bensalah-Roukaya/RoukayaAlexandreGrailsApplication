@@ -22,12 +22,12 @@
             <table>
                 <thead>
                 <tr>
-                    <th class="sortable"><a href="/user/index?sort=title&amp;max=10&amp;order=asc">Titre</a></th>
+                    <th class="sortable"><a href="/user/index?sort=title&amp;max=10&amp;order=asc">Title</a></th>
                     <th class="sortable"><a href="/user/index?sort=description&amp;max=10&amp;order=asc">Description</a></th>
-                    <th class="sortable"><a href="/user/index?sort=validTill&amp;max=10&amp;order=asc">Date de validité</a></th>
+                    <th class="sortable"><a href="/user/index?sort=validTill&amp;max=10&amp;order=asc">ValidTill</a></th>
                     <th class="sortable"><a href="/user/index?sort=illustrations&amp;max=10&amp;order=asc">Illustrations</a></th>
-                    <th class="sortable"><a href="/user/index?sort=state&amp;max=10&amp;order=asc">État</a></th>
-                    <th class="sortable"><a href="/user/index?sort=author&amp;max=10&amp;order=asc">Auteur</a></th>
+                    <th class="sortable"><a href="/user/index?sort=state&amp;max=10&amp;order=asc">State</a></th>
+                    <th class="sortable"><a href="/user/index?sort=author&amp;max=10&amp;order=asc">Author</a></th>
                 </tr>
                 </thead>
                 <g:each in="${annonceList}" var="annonce">
@@ -37,8 +37,8 @@
                         <td>${annonce.validTill}</td>
                         <td>
                             <ul>
-                                <g:each in="${annonce.illustration}" var="illustration">
-                                    <li><g:link controller="illustration" action="show" id="${illustration.id}">${illustration.filename}</g:link></li>
+                                <g:each in="${annonce.illustrations}" var="illustration">
+                                    <li><g:link controller="annonce" action="show" id="${illustration.id}">${illustration.filename}</g:link></li>
                                 </g:each>
                             </ul>
                         </td>
@@ -50,7 +50,7 @@
                                 Expirée
                             </g:else>
                         </td>
-                        <td><g:link controller="user" action="show" id="${annonce.author}">${annonce.author}</g:link></td>
+                        <td><g:link controller="user" action="show" id="${annonce.author.id}">${annonce.author}</g:link></td>
                     </tr>
                 </g:each>
             </table>

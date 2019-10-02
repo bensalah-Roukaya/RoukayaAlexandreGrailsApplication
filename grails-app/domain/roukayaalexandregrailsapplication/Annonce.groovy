@@ -12,13 +12,13 @@ class Annonce {
 
     static belongsTo = [author: User]
 
-    static hasMany = [ illustration: Illustration]
+    static hasMany = [ illustrations: Illustration]
     static constraints = {
 
         title blank: false, nullable: false
         description blank: false, nullable: false
         validTill nullable: false
-        illustration nullable: true
+        illustrations nullable: true
 
     }
 
