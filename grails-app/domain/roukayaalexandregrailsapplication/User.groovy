@@ -15,4 +15,9 @@ class User {
         thumbnail nullable: false
         annonces nullable: true
     }
+
+    @Override
+    String toString() {
+        return username
+    }
 }

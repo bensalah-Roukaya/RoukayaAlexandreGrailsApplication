@@ -8,4 +8,9 @@ class Illustration {
         filename blank: false,
                  nullable: false
     }
+
+    @Override
+    String toString() {
+        return filename
+    }
 }

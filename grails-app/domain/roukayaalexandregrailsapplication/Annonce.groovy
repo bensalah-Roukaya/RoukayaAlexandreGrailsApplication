@@ -21,6 +21,8 @@ class Annonce {
         illustration nullable: true
 
     }
+
+    @Override
     String toString(){
         return title
     }
