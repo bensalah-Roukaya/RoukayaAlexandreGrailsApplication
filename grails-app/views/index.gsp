@@ -7,13 +7,13 @@
 <body>
 <content tag="nav">
     <li class="dropdown">
-        <g:link controller="user">Liste d'utilisateurs</g:link>
+        <g:link controller="user">User List</g:link>
     </li>
     <li class="dropdown">
-        <g:link controller="annonce">Liste d'annonces</g:link>
+        <g:link controller="annonce">Annonce List</g:link>
     </li>
     <li class="dropdown">
-        <g:link controller="illustration">Liste d'illustrations</g:link>
+        <g:link controller="illustration">Illustration List</g:link>
     </li>
 </content>
 
@@ -25,11 +25,11 @@
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <h1>Bienvenue à la plateforme de gestion d’annonces</h1>
+        <h1>Welcome to the platform</h1>
 
         <p>
-            L’objectif de ce premier TP est de vous aider à mettre en place votre environnement de travail et vous donner toutes les informations nécessaires à la réalisation du projet.
-            Le développement GRAILS demande une machine d’une puissance respectable puisqu’il vous faudra installer de nombreux éléments demandant une quantité importante de ressources.
+            The objective of this first TP is to help you set up your work environment and give you all the information
+                needed to complete the project.
         </p>
 
     </section>

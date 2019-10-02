@@ -8,6 +8,11 @@ class BootStrap {
                 password: "password",
                 thumbnail: new Illustration(filename: "user1.jpg"))
 
+        def userInstance1 = new User (
+                username: "Alexandre",
+                password: "password1",
+                thumbnail: new Illustration(filename: "user2.jpg"))
+
         (1..5).each  {
             userInstance.addToAnnonces(
                     new Annonce(
