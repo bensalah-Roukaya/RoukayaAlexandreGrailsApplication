@@ -34,7 +34,7 @@ class BootStrap {
                         validTill: new Date(),
                         state: Boolean.FALSE
                 )
-                .addToIllustrations(new Illustration(filename: 'THE_filename'))
+                .addToIllustrations(new Illustration(filename: 'Image4.jpg'))
         ).save(flush: true, failOnError: true)
     }
     def destroy = {}

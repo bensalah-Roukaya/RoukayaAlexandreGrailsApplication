@@ -22,16 +22,17 @@
             <table>
                 <thead>
                 <tr>
+                    <th class="sortable"><a href="/user/index?sort=author&amp;max=10&amp;order=asc">Author</a></th>
                     <th class="sortable"><a href="/user/index?sort=title&amp;max=10&amp;order=asc">Title</a></th>
                     <th class="sortable"><a href="/user/index?sort=description&amp;max=10&amp;order=asc">Description</a></th>
                     <th class="sortable"><a href="/user/index?sort=validTill&amp;max=10&amp;order=asc">ValidTill</a></th>
                     <th class="sortable"><a href="/user/index?sort=illustrations&amp;max=10&amp;order=asc">Illustrations</a></th>
                     <th class="sortable"><a href="/user/index?sort=state&amp;max=10&amp;order=asc">State</a></th>
-                    <th class="sortable"><a href="/user/index?sort=author&amp;max=10&amp;order=asc">Author</a></th>
                 </tr>
                 </thead>
                 <g:each in="${annonceList}" var="annonce">
                     <tr>
+                        <td><g:link controller="user" action="show" id="${annonce.author.id}">${annonce.author}</g:link></td>
                         <td><g:link controller="annonce" action="show" id="${annonce.id}">${annonce.title}</g:link></td>
                         <td>${annonce.description}</td>
                         <td>${annonce.validTill}</td>
@@ -50,7 +51,6 @@
                                 Expired
                             </g:else>
                         </td>
-                        <td><g:link controller="user" action="show" id="${annonce.author.id}">${annonce.author}</g:link></td>
                     </tr>
                 </g:each>
             </table>

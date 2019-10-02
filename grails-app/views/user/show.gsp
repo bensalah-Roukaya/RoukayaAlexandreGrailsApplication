@@ -36,11 +36,13 @@
             </div>
         </li>
 
+
         <li class="fieldcontain">
             <span id="username-label" class="property-label">Username</span>
 
             <div class="property-value" aria-labelledby="username-label">${user.username}</div>
         </li>
+
 
         <li class="fieldcontain">
             <span id="password-label" class="property-label">Password</span>
