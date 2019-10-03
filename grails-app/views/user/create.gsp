@@ -42,7 +42,8 @@
                     <div class="fieldcontain required">
                         <label for="thumbnail">Thumbnail
                             <span class="required-indicator">*</span>
-                        </label><input type="file" name="file" id="thumbnail">
+                        </label>
+                        <input type="file" name="file" id="thumbnail">
                     </div>
                 </fieldset>
                 <fieldset class="buttons">

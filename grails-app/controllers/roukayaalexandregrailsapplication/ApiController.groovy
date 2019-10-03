@@ -23,24 +23,14 @@ class ApiController {
             case "PUT":
                 if (!params.id)
                     return response.status = 400
-                def annonceInstance = Annonce.get(params.id)
+                def annonceInstance = Annonce.Put(params.id)
                 if (!annonceInstance)
                     return response.status = 404
-                if (params.title)
+
+                if (request.XML.title){
                     annonceInstance.title = params.title
-                if (params.description)
-                    annonceInstance.description = params.description
-                if (params.dateCreated)
-                    annonceInstance.dateCreated = params.dateCreated
-                if (params.validTill)
-                    annonceInstance.validTill = params.validTill
-                if (params.state)
-                    annonceInstance.state = params.state
-                if (params.author)
-                    annonceInstance.author = params.author
-                if (params.illustrations)
-                    annonceInstance.illustrations = params.illustrations
-                annonceInstance.save()
+                    annonceInstance.save()}
+
                 response.withFormat {
                     xml { render annonceInstance as XML}
                     json { render annonceInstance as JSON }
