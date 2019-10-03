@@ -26,7 +26,20 @@ class ApiController {
                 def annonceInstance = Annonce.get(params.id)
                 if (!annonceInstance)
                     return response.status = 404
-                annonceInstance.description = "J'ai été changé grâce à la fonction PUT !"
+                if (params.title)
+                    annonceInstance.title = params.title
+                if (params.description)
+                    annonceInstance.description = params.description
+                if (params.dateCreated)
+                    annonceInstance.dateCreated = params.dateCreated
+                if (params.validTill)
+                    annonceInstance.validTill = params.validTill
+                if (params.state)
+                    annonceInstance.state = params.state
+                if (params.author)
+                    annonceInstance.author = params.author
+                if (params.illustrations)
+                    annonceInstance.illustrations = params.illustrations
                 annonceInstance.save()
                 response.withFormat {
                     xml { render annonceInstance as XML}
