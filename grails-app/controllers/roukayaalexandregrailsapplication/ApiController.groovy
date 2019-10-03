@@ -21,6 +21,17 @@ class ApiController {
                 }
                 break
             case "PUT":
+                if (!params.id)
+                    return response.status = 400
+                def annonceInstance = Annonce.get(params.id)
+                if (!annonceInstance)
+                    return response.status = 404
+                annonceInstance.description = "J'ai été changé grâce à la fonction PUT !"
+                annonceInstance.save()
+                response.withFormat {
+                    xml { render annonceInstance as XML}
+                    json { render annonceInstance as JSON }
+                }
                 break
             case "PATCH":
                 break
@@ -47,6 +58,7 @@ class ApiController {
                 }
                 break
             case "POST":
+
                 break
             default:
                 return response.status = 405
