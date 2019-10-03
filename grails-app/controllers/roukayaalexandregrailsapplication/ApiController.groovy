@@ -1,5 +1,7 @@
 package roukayaalexandregrailsapplication
 
+import com.fasterxml.jackson.core.JsonGenerator
+import com.fasterxml.jackson.databind.ObjectMapper
 import grails.converters.JSON
 import grails.converters.XML
 
@@ -7,6 +9,7 @@ class ApiController {
 
     // GET / PUT / PATCH / DELETE
     def annonce() {
+        ObjectMapper mapper = new ObjectMapper()
         switch(request.getMethod())
         {
             case "GET":
@@ -26,21 +29,9 @@ class ApiController {
                 def annonceInstance = Annonce.get(params.id)
                 if (!annonceInstance)
                     return response.status = 404
-                if (params.title)
-                    annonceInstance.title = params.title
-                if (params.description)
-                    annonceInstance.description = params.description
-                if (params.dateCreated)
-                    annonceInstance.dateCreated = params.dateCreated
-                if (params.validTill)
-                    annonceInstance.validTill = params.validTill
-                if (params.state)
-                    annonceInstance.state = params.state
-                if (params.author)
-                    annonceInstance.author = params.author
-                if (params.illustrations)
-                    annonceInstance.illustrations = params.illustrations
-                annonceInstance.save()
+                /*mapper.writeValue(request.JSON as JsonGenerator,annonceInstance)
+                mapper.writeValueAsString(annonceInstance)
+                println(annonceInstance)*/
                 response.withFormat {
                     xml { render annonceInstance as XML}
                     json { render annonceInstance as JSON }
@@ -49,7 +40,13 @@ class ApiController {
             case "PATCH":
                 break
             case "DELETE":
-                break
+                if (!params.id)
+                    return response.status = 400
+                def annonceInstance = Annonce.get(params.id)
+                if (!annonceInstance)
+                    return response.status = 404
+                annonceInstance.delete(flush:true)
+                return response.status = 200
             default:
                 return response.status = 405
                 break
