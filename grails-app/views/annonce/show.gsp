@@ -54,7 +54,7 @@
 
                         <ul>
                             <g:each in="${annonce.illustrations}" var="illustration">
-                                <li><asset:image width="200" height="100" src="illustrations/${illustration.filename}"/></li>
+                                <li><g:img width="200" height="100" file="${illustration.filename}"/></li>
                             </g:each>
                         </ul>
 

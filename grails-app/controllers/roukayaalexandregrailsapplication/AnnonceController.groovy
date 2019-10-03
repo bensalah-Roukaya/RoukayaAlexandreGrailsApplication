@@ -28,6 +28,42 @@ class AnnonceController {
             return
         }
 
+
+        // récupérer le fichier du formulaire
+        def file = request.getFiles("file")
+
+        file.each{
+            // générer un nom de fichier aléatoire et vérifier qu'il n'existe pas déjà
+            final String lexicon = "abcdefghijklmnopqrstuvwxyz12345674890";
+            final Random rand = new Random();
+            final Set<String> identifiers = new HashSet<String>();
+
+            StringBuilder nomFichier = new StringBuilder();
+            while(nomFichier.toString().length() == 0) {
+                int length = rand.nextInt(5)+5;
+                for(int i = 0; i < length; i++) {
+                    nomFichier.append(lexicon.charAt(rand.nextInt(lexicon.length())));
+                }
+                if(identifiers.contains(nomFichier.toString())) {
+                    nomFichier = new StringBuilder();
+                }
+            }
+
+            // Sauvegarder le fichier sur le disque en utilisant le path renseigné dans le fichier de configuration
+            def assets_path
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+                assets_path = grailsApplication.config.maconfig.assets_path_windows
+            } else {
+                assets_path = grailsApplication.config.maconfig.assets_path_mac
+            }
+            it.transferTo(new File(assets_path+nomFichier+'.png'))
+
+            // Garder une trace sur le nom du fichier
+            annonce.addToIllustrations(new Illustration(filename: nomFichier+'.png'))
+
+        }
+
+
         try {
             annonceService.save(annonce)
         } catch (ValidationException e) {

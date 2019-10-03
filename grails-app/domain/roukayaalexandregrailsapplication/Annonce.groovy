@@ -19,7 +19,6 @@ class Annonce {
         description blank: false, nullable: false
         validTill nullable: false
         illustrations nullable: true
-
     }
 
     @Override
