@@ -311,7 +311,7 @@
                 <label for="illustrations">Illustrations
                     <span class="required-indicator">*</span>
                 </label>
-                <input type="file" name="file" id="illustrations">
+                <input type="file" name="file" id="illustrations" multiple="multiple" accept="image/png">
 
             </div>
 
