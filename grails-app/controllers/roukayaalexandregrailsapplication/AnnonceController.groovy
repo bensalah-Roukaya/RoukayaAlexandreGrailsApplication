@@ -29,8 +29,6 @@ class AnnonceController {
         }
 
 
-
-
         // récupérer le fichier du formulaire
         def file = request.getFile("file")
 

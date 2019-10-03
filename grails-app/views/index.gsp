@@ -12,9 +12,7 @@
     <li class="dropdown">
         <g:link controller="annonce">Annonce List</g:link>
     </li>
-    <li class="dropdown">
-        <g:link controller="illustration">Illustration List</g:link>
-    </li>
+
 </content>
 
 <div class="svg" role="presentation">
