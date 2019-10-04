@@ -11,8 +11,8 @@ class Annonce {
     Boolean state = Boolean.FALSE
 
     static belongsTo = [author: User]
-
     static hasMany = [ illustrations: Illustration]
+
     static constraints = {
 
         title blank: false, nullable: false
