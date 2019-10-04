@@ -91,7 +91,7 @@ class AnnonceController {
         }
 
         try {
-            annonceService.save(annonce)
+            save(annonce)
         } catch (ValidationException e) {
             println annonce.errors
             respond annonce.errors, view:'edit'
@@ -101,7 +101,6 @@ class AnnonceController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'annonce.label', default: 'Annonce'), annonce.id])
-                redirect annonce
             }
             '*'{ respond annonce, [status: OK] }
         }
