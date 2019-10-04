@@ -51,7 +51,6 @@
 
                     <div class="property-value" aria-labelledby="illustrations-label">
 
-
                         <ul>
                             <g:each in="${annonce.illustrations}" var="illustration">
                                 <li><g:img width="200" height="100" file="${illustration.filename}"/></li>
