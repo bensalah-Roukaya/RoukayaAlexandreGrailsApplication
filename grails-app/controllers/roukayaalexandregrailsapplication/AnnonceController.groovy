@@ -107,6 +107,17 @@ class AnnonceController {
         }
     }
 
+    def deletefromillustrations(){
+        def illustrationId = params.param2
+        def annonceId = params.param1
+        def annonceInstance = Annonce.get(annonceId)
+        def IllustrationInstance = Illustration.get(illustrationId)
+        annonceInstance.removeFromIllustrations(IllustrationInstance)
+        annonceInstance.save(flush:true)
+        IllustrationInstance.delete(flush:true)
+        redirect(controller:"annonce",action:"edit",id: annonceInstance.id)
+    }
+
     def delete(Long id) {
         if (id == null) {
             notFound()

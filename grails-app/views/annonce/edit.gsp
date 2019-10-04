@@ -114,9 +114,7 @@
                     <option value="11">novembre</option>
                     <option value="12">décembre</option>
                 </select>
-                <select name="validTill_year" id="validTill_year" aria-labelledby="validTill"><option
-                        value="2119">2119</option>
-                    <option value="2118">2118</option>
+                <select name="validTill_year" id="validTill_year" aria-labelledby="validTill"><option value="2119">2119</option><option value="2118">2118</option>
                     <option value="2117">2117</option>
                     <option value="2116">2116</option>
                     <option value="2115">2115</option>
@@ -326,6 +324,10 @@
                         <div>
                             <g:each in="${annonce.illustrations}" var="illustration">
                                 <li><g:img width="200" height="100" file="${illustration.filename}"/></li>
+                                <g:link controller="annonce"
+                                        action="deletefromillustrations"
+                                        params="[param1:annonce.id, param2:illustration.id]">supprimer
+                                </g:link>
                             </g:each>
                         </div>
 
