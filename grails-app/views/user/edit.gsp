@@ -26,7 +26,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.user}" method="PUT">
+            <g:form resource="${this.user}" method="PUT"  enctype="multipart/form-data">
                 <fieldset class="form">
                     <div class="fieldcontain required">
                         <label for="username">Username
@@ -43,6 +43,10 @@
                     <div class="fieldcontain required">
                         <label>Old Thumbnail</label>
                         <g:img width="50" height="50" file="${user.thumbnail.filename}"/>
+                        <g:link controller="user"
+                                action="deleteuser"
+                                params="[param1:user.id, param2:user.thumbnail.id]">supprimer
+                        </g:link>
                     </div>
 
                     <div class="fieldcontain required">

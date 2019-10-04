@@ -34,8 +34,7 @@
         </ul>
     </g:hasErrors>
 
-
-    <g:form resource="${this.annonce}" method="PUT">
+    <g:form resource="${this.annonce}" method="PUT" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT" id="_method">
         <input type="hidden" name="version" value="0" id="version">
         <fieldset class="form">
