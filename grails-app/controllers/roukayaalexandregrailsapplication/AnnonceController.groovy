@@ -60,7 +60,6 @@ class AnnonceController {
 
             // Garder une trace sur le nom du fichier
             annonce.addToIllustrations(new Illustration(filename: nomFichier+'.png'))
-
         }
 
 
@@ -85,6 +84,7 @@ class AnnonceController {
     }
 
     def update(Annonce annonce) {
+        println params
         if (annonce == null) {
             notFound()
             return
@@ -93,6 +93,7 @@ class AnnonceController {
         try {
             annonceService.save(annonce)
         } catch (ValidationException e) {
+            println annonce.errors
             respond annonce.errors, view:'edit'
             return
         }
