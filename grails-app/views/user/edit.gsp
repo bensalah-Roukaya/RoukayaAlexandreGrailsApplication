@@ -43,10 +43,7 @@
                     <div class="fieldcontain required">
                         <label>Old Thumbnail</label>
                         <g:img width="50" height="50" file="${user.thumbnail.filename}"/>
-                        <g:link controller="user"
-                                action="deleteuser"
-                                params="[param1:user.id, param2:user.thumbnail.id]">supprimer
-                        </g:link>
+
                     </div>
 
                     <div class="fieldcontain required">

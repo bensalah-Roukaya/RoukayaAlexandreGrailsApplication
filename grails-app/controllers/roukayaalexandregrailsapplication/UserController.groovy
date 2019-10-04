@@ -102,18 +102,6 @@ class UserController {
         }
     }
 
-
-    /*def deleteuser(){
-        def illustrationsId = params.param2
-        def userId = params.param1
-        def userInstance = User.get(userId)
-        def thumbnailInstance= Illustration.get(illustrationsId)
-        userInstance.delete("thumbnail",thumbnailInstance)
-        userInstance.save(flush:true)
-        thumbnailInstance.delete(flush:true)
-        redirect(controller:"user",action:"edit",id: userInstance.id)
-    }*/
-
     def delete(Long id) {
         if (id == null) {
             notFound()
