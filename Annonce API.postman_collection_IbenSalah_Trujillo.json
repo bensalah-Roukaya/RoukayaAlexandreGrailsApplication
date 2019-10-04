@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "1ec09a63-e071-49d1-86ec-f635dde9df96",
+		"name": "Annonce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get annonce JSON",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get annonce XML",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get annonce KO",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/444",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit annonce",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"title updated\",\n    \"dateCreated\": \"2019-10-03T21:21:12Z\",\n    \"validTill\": \"2019-10-03T21:21:12Z\",\n    \"illustrations\": [\n        {\n            \"id\": 2\n        },\n        {\n            \"id\": 4\n        },\n        {\n            \"id\": 3\n        }\n    ],\n    \"description\": \"description\",\n    \"state\": true,\n    \"author\": {\n        \"id\": 1\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit annonce KO",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"\",\n    \"dateCreated\": \"2019-10-03T21:21:12Z\",\n    \"validTill\": \"2019-10-03T21:21:12Z\",\n    \"illustrations\": [\n        {\n            \"id\": 2\n        },\n        {\n            \"id\": 4\n        },\n        {\n            \"id\": 3\n        }\n    ],\n    \"description\": \"description\",\n    \"state\": true ,\n     \"author\": {\n        \"id\": 1\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch annonce",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"ti\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch annonce KO",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"titleTOTO\": \"ti\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete annonce",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete annonce KO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonce/33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonce",
+						"33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get annonces list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get annonces list KO",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/pdf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add annonce",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"title121\",\n    \"validTill\": \"2019-10-03T19:36:17Z\",\n    \"illustrations\": [\n        {\n            \"id\": 3\n        },\n        {\n            \"id\": 3\n        },\n        {\n            \"id\": 4\n        }\n    ],\n    \"description\": \"descriptiontest\",\n    \"state\": true,\n    \"author\": {\n        \"id\": 1\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add annonce KO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"title121\",\n    \"validTill\": \"2019-10-03T19:36:17Z\",\n    \"illustrations\": [\n        {\n            \"id\": 3\n        },\n        {\n            \"id\": 3\n        },\n        {\n            \"id\": 4\n        }\n    ],\n    \"description\": \"descriptiontest\",\n    \"state\": true,\n    \"author\": {\n        \"id\": 324242423423423423423423\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8091/projet/api/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"projet",
+						"api",
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
