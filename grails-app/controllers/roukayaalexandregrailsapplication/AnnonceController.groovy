@@ -106,11 +106,11 @@ class AnnonceController {
         }
     }
 
-    def deletefromillustrations(){
-        def illustrationId = params.param2
-        def annonceId = params.param1
-        def annonceInstance = Annonce.get(annonceId)
+    def deleteIllustration(){
+        def illustrationId = params.illustrationId
         def IllustrationInstance = Illustration.get(illustrationId)
+        def annonceId = params.annonceId
+        def annonceInstance = Annonce.get(annonceId)
         annonceInstance.removeFromIllustrations(IllustrationInstance)
         annonceInstance.save(flush:true)
         IllustrationInstance.delete(flush:true)

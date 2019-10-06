@@ -324,8 +324,8 @@
                             <g:each in="${annonce.illustrations}" var="illustration">
                                 <li><g:img width="200" height="100" file="${illustration.filename}"/></li>
                                 <g:link controller="annonce"
-                                        action="deletefromillustrations"
-                                        params="[param1:annonce.id, param2:illustration.id]">supprimer
+                                        action="deleteIllustration"
+                                        params="[annonceId:annonce.id, illustrationId:illustration.id]">supprimer
                                 </g:link>
                             </g:each>
                         </div>
