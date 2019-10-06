@@ -1,6 +1,5 @@
 package roukayaalexandregrailsapplication
 
-import com.fasterxml.jackson.core.JsonGenerator
 import com.fasterxml.jackson.databind.ObjectMapper
 import grails.converters.JSON
 import grails.converters.XML
@@ -52,11 +51,7 @@ class ApiController {
                         }
                         break
                     default:
-                        response.status = 406
-                }
-                response.withFormat {
-                    xml { render annonceInstance as XML }
-                    json { render annonceInstance as JSON }
+                        return response.status = 406
                 }
                 break
             case "PATCH":
@@ -81,21 +76,14 @@ class ApiController {
                             annonceInstance[it.key] = it.value
                         }
                         if (annonceInstance.save(flush: true)) {
-                            response.status = 200
-                            response.withFormat {
-                                xml { render annonceInstance as XML }
-                                json { render annonceInstance as JSON }
-                            }
+                            return response.status = 200
+
                         } else {
                             return response.status = 400
                         }
                         break
                     default:
-                        response.status = 406
-                }
-                response.withFormat {
-                    xml { render annonceInstance as XML }
-                    json { render annonceInstance as JSON }
+                        return response.status = 406
                 }
                 break
             case "DELETE":
@@ -110,7 +98,7 @@ class ApiController {
                 return response.status = 405
                 break
         }
-        response.status = 406
+        return response.status = 406
     }
 
     // GET / POST
@@ -156,7 +144,7 @@ class ApiController {
                 return response.status = 405
                 break
         }
-        response.status = 406
+        return response.status = 406
     }
 }
 
