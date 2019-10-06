@@ -1,5 +1,5 @@
 # Description:
-Ce projet fourni une API permettant de gérer des annonces.
+Ce projet s'agit d'une plateforme de gestion d’annonces et fournit une API permettant de gérer des annonces.
 
 L'ensembre des sevices web disponibles via le point d'entrée: `/projet/api/annonces` sont:
 
